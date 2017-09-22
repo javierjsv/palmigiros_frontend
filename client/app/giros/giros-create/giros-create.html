@@ -1,0 +1,59 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="">
+
+          <div >
+            <input type="text" class="" placeholder="CedulaEmisor" ng-model="vm.docuEmisor" >
+            <button type="button"  class="btn btn-primary" ng-click="vm.encEmisor()" name="button">Buscar</button>
+
+          </div>
+
+
+
+          <div class="well">
+            <small>nombre emisor</small>
+            <p>{{vm.clienteEmisor.nombres}}</p>
+            <small>apellidos</small>
+            <p>{{vm.clienteEmisor.apellidos}}</p>
+          </div>
+
+
+          <div class="">
+            <input type="text" placeholder="CedulaEmisor" ng-model="vm.docuReceptor" >
+            <button type="button" class="btn btn-success" ng-click="vm.encReceptor()" name="button">Buscar</button>
+
+          </div>
+
+          <div class="well">
+              <small>nombre Receptor</small>
+              <p>{{vm.clienteReceptor.nombres}}</p>
+                <small>apellidos</small>
+              <p>{{vm.clienteReceptor.apellidos}}</p>
+          </div>
+
+      <form class="" ng-submit="vm.createGiro()">
+
+	    <ul>
+        <select class="form-control" name="" ng-model="vm.giro.idCiudadEmisor.id">
+          <option value="">Ciudad Emisora</option>
+          <option ng-value = "item.id" ng-repeat="item in vm.ciuEmisor"> {{item.ciudad}} </option>
+        </select>
+        <select class="form-control" name="" ng-model="vm.giro.idCiudadReceptor.id">
+          <option value="">Ciudad Receptor</option>
+          <option ng-value = "item.id" ng-repeat="item in vm.ciuReceptor"> {{item.ciudad}} </option>
+        </select>
+          <!-- <input type="text" placeholder="cantidad" ng-model="vm.giro.monto" name="" value="">
+        <button class="btn btn-info" type="submit" name="button">enviar giro</button> -->
+
+        <div class="input-group">
+          <span class="input-group-addon">$</span>
+        <span class="input-group-addon">cantidad</span>
+        <input type="text"  ng-model="vm.giro.monto" class="form-control">
+      </div>
+      <button class="btn btn-info" type="submit" name="button">enviar giro</button>
+	    </ul>
+      </form>
+    </div>
+  </div>
+</section>

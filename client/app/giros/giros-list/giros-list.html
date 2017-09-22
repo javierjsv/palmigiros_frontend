@@ -1,0 +1,30 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <form class="form-group" ng-submit="vm.searchGiro()">
+          <input class="form-control" ng-model="vm.numDoc" type="number" placeholder="Documento Cliente">
+          <button type="submit" class="btn btn-primary">buscar</button>
+      </form>
+    </div>
+  </div>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre receptor</th>
+        <th>Nombre emisor</th>
+        <th>Fecha</th>
+        <th>Monto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in vm.giros">
+        <td>{{item.idClienteReceptor.nombres}}</td>
+        <td>{{item.idClienteEmisor.nombres}}</td>
+        <td>{{item.fecha}}</td>
+        <td>{{item.monto}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</section>
